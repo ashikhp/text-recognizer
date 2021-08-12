@@ -6,6 +6,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>text recoginer</Text>
+      <Text>wwertyusdfghj</Text>
       <StatusBar style="auto" />
     </View>
   );
