@@ -5,7 +5,7 @@ const home = () => {
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
             <Text>
-                Text Recoginizer app
+                Text Recoginizer App
             </Text>
         </View>
     );
