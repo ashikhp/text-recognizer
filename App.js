@@ -8,7 +8,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="home" component={home} />
+        <Stack.Screen name="home" component={home} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
