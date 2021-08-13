@@ -17,6 +17,14 @@ const home = (props) => {
                 />
 
             </Appbar.Header>
+            <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                <MaterialCommunityIcons name="plus"
+                    size={60}
+                    color="#226e36" />
+                <Text>
+                    Click here to take image
+                </Text>
+            </View>
         </>
     );
 }
