@@ -21,6 +21,7 @@ import { Appbar } from 'react-native-paper';
 import Constants from 'expo-constants';
 import * as firebase from 'firebase';
 import uuid from 'uuid';
+import Lightbox from "react-native-lightbox";
 import Environment from './config/environment.js'
 
 
@@ -93,76 +94,69 @@ const CardScan = (props) => {
         } else {
 
             return (
-                <KeyboardAvoidingView
-                    contentContainerStyle={styles.container}
-                    style={{ backgroundColor: '#fff', flex: 1 }}
-                    behavior={(Platform.OS === 'ios') ? 'padding' : null} >
-                    <ScrollView
-                        showsVerticalScrollIndicator={false}
-                        style={{ paddingBottom: 40 }}>
-                        <View>
-                            <Image source={{ uri: image }} resizeMode={"contain"} style={{ width: "100%", height: 250, marginTop: 10, marginBottom: 20, borderRadius: 20 }} />
-                        </View>
-                        <ScrollView showsVerticalScrollIndicator={false}>
-                            {googleResponse && (
-                                <ScrollView showsVerticalScrollIndicator={false}>
-                                    <View style={styles.helpContainer}>
-                                    </View>
-                                    {!editOption &&
 
-                                        <TouchableOpacity style={{ justifyContent: 'center' }} onPress={() => {
-                                            setEditOption(true)
-                                        }} >
-                                            <Text style={{ padding: 15, alignSelf: 'center', marginTop: -20, color: "#4a8eed" }}>Tap here to edit the scanned text from here</Text>
-                                        </TouchableOpacity>
-                                    }
-
-                                    <ScrollView showsVerticalScrollIndicator={false}>
-
-                                        <FlatList
-                                            data={responce}
-                                            keyExtractor={(item, index) => item.id}
-                                            renderItem={({ item, index }) => (
-                                                <>
-                                                    {item === "" ? null :
-
-                                                        <ScrollView showsVerticalScrollIndicator={false}>
-
-                                                            {editOption ?
-                                                                < View >
-                                                                    <TextInput
-                                                                        value={item}
-                                                                        returnKeyType='next'
-                                                                        autoFocus={index === 0}
-                                                                        onChangeText={(text) => {
-                                                                            responce[index] = text
-                                                                            setForceRender(!forceRender)
-                                                                        }}></TextInput>
-
-                                                                </View > :
-                                                                < View style={{ padding: 10, backgroundColor: "#fff" }}>
-                                                                    <Text style={{ fontSize: 16 }}>{item}</Text>
-                                                                </View>
-
-
-                                                            }
-                                                        </ScrollView>
-                                                    }
-                                                </>
-                                            )}
-                                        />
-                                    </ScrollView>
-
-                                </ScrollView>
-
-
+                <>
+                    <Lightbox underlayColor="white"
+                        renderContent={() => {
+                            return (
+                                <Image
+                                    style={{ height: "100%", width: "100%", alignSelf: 'center' }}
+                                    resizeMode="contain"
+                                    source={{
+                                        uri: image
+                                    }}
+                                />
                             )
+                        }}
+                    >
+                        <View style={{ alignSelf: "center", marginTop: 10, marginBottom: 10 }}>
+                            <Image
+                                style={{ height: 80, width: 100, borderRadius: 10 }}
+                                resizeMode={"cover"}
+                                source={{
+                                    uri: image
+                                }}
+                            />
+                        </View>
+                    </Lightbox>
+                    {googleResponse && (
+                        <>
 
-                            }
+                            <FlatList
+                                data={responce}
+                                keyExtractor={(item, index) => item.id}
+                                renderItem={({ item, index }) => (
+                                    <>
+                                        {item === "" ? null :
 
-                        </ScrollView>
-                    </ScrollView>
-                </KeyboardAvoidingView>
+                                            <View style={{ backgroundColor: "#e1eef5", padding: 5 }} >
+
+                                                <TextInput
+                                                    style={{ padding: 2, fontSize: 16 }}
+                                                    value={item}
+                                                    returnKeyType='next'
+                                                    // autoFocus={index === 0}
+                                                    onChangeText={(text) => {
+                                                        responce[index] = text
+                                                        setForceRender(!forceRender)
+                                                    }}></TextInput>
+
+
+
+                                            </View>
+                                        }
+                                    </>
+                                )}
+                            />
+                        </>
+
+
+
+                    )
+
+                    }
+
+                </>
             );
         }
     };
@@ -292,10 +286,10 @@ const CardScan = (props) => {
 
             </Appbar.Header>
 
-            <ScrollView style={styles.helpContainer}>
+            <View style={styles.helpContainer}>
                 {maybeRenderImage()}
                 {maybeRenderUploadingOverlay()}
-            </ScrollView>
+            </View>
 
 
         </View>
@@ -359,7 +353,8 @@ const styles = StyleSheet.create({
 
     helpContainer: {
         marginTop: 15,
-        padding: 10
+        padding: 20,
+        height: "80%"
     },
     helpContainer1: {
         marginTop: 15,
