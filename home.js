@@ -50,7 +50,7 @@ const home = (props) => {
                             <Image
                                 style={{ height: 65, width: 65 }}
                                 resizeMode={'contain'}
-                                source={require('./assets/camera.png')}
+                                source={require('./assets/photo-camera.png')}
                             />
                             <Text style={{ marginLeft: 5, marginTop: 5, color: "black", fontSize: 16 }}>Camera</Text>
                         </TouchableOpacity>
@@ -58,7 +58,7 @@ const home = (props) => {
                             <Image
                                 style={{ height: 63, width: 63 }}
                                 resizeMode={'contain'}
-                                source={require('./assets/image-gallery.png')}
+                                source={require('./assets/gallery.png')}
                             />
                             <Text style={{ marginLeft: 5, marginTop: 5, color: "black", fontSize: 16 }}>Gallery</Text>
                         </TouchableOpacity>
