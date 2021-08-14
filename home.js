@@ -46,7 +46,14 @@ const home = (props) => {
                         size={30}
                         color="#fff" />
                     <View style={{ flexDirection: "row" }}>
-                        <TouchableOpacity style={{ marginTop: 40, marginLeft: "25%" }}>
+                        <TouchableOpacity style={{ marginTop: 40, marginLeft: "25%" }}
+                            onPress={() => {
+                                setmodal(false)
+                                props.navigation.navigate('Card Scan', {
+                                    fromCamera: true,
+                                });
+                            }}
+                        >
                             <Image
                                 style={{ height: 65, width: 65 }}
                                 resizeMode={'contain'}
@@ -54,7 +61,14 @@ const home = (props) => {
                             />
                             <Text style={{ marginLeft: 5, marginTop: 5, color: "black", fontSize: 16 }}>Camera</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ marginTop: 40, marginLeft: 45 }}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                setmodal(false)
+                                props.navigation.navigate('Card Scan', {
+                                    fromGallery: true,
+                                });
+                            }}
+                            style={{ marginTop: 40, marginLeft: 45 }}>
                             <Image
                                 style={{ height: 63, width: 63 }}
                                 resizeMode={'contain'}
