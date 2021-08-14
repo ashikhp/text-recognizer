@@ -141,13 +141,12 @@ const CardScan = (props) => {
                                                         setForceRender(!forceRender)
                                                     }}></TextInput>
 
-
-
                                             </View>
                                         }
                                     </>
                                 )}
                             />
+
                         </>
 
 
