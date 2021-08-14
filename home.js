@@ -35,14 +35,14 @@ const home = (props) => {
             >
                 <View style={{ backgroundColor: "#fff", height: 200, borderRadius: 10 }}>
 
-                    <View style={{ backgroundColor: "#226e36", marginTop: -10, height: 30, width: "100%", flexDirection: "row", borderTopEndRadius: 10, borderTopLeftRadius: 10 }}>
+                    <View style={{ backgroundColor: "#226e36", marginTop: -10, height: 30, width: "100%", borderTopEndRadius: 10, borderTopLeftRadius: 10 }}>
                         <Text style={{ fontSize: 14, color: "#fff", padding: 3 }}>Choose Image via</Text>
-                        <MaterialCommunityIcons name="close"
-                            style={{ marginLeft: "60%" }}
-                            onPress={() => { setmodal(false) }}
-                            size={30}
-                            color="#fff" />
                     </View>
+                    <MaterialCommunityIcons name="close"
+                        style={{ alignSelf: "flex-end", marginTop: -30 }}
+                        onPress={() => { setmodal(false) }}
+                        size={30}
+                        color="#fff" />
                     <View style={{ flexDirection: "row" }}>
                         <View style={{ marginTop: 40, marginLeft: "25%" }}>
                             <Image
