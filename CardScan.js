@@ -278,7 +278,7 @@ const CardScan = (props) => {
             <Appbar.Header style={{ backgroundColor: '#4a8eed', height: 50, marginTop: 0 }}>
 
                 <Appbar.Content
-                    title={'Card Scan'}
+                    title={'Image to text'}
                     color='#fff'
                     titleStyle={{ fontSize: 16, fontWeight: 'bold' }}
                 />
