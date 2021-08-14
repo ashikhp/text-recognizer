@@ -46,22 +46,22 @@ const home = (props) => {
                         size={30}
                         color="#fff" />
                     <View style={{ flexDirection: "row" }}>
-                        <View style={{ marginTop: 40, marginLeft: "25%" }}>
+                        <TouchableOpacity style={{ marginTop: 40, marginLeft: "25%" }}>
                             <Image
                                 style={{ height: 65, width: 65 }}
                                 resizeMode={'contain'}
                                 source={require('./assets/camera.png')}
                             />
                             <Text style={{ marginLeft: 5, marginTop: 5, color: "black", fontSize: 16 }}>Camera</Text>
-                        </View>
-                        <View style={{ marginTop: 43, marginLeft: 45 }}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ marginTop: 43, marginLeft: 45 }}>
                             <Image
                                 style={{ height: 63, width: 63 }}
                                 resizeMode={'contain'}
                                 source={require('./assets/image-gallery.png')}
                             />
                             <Text style={{ marginLeft: 5, marginTop: 5, color: "black", fontSize: 16 }}>Gallery</Text>
-                        </View>
+                        </TouchableOpacity>
                     </View>
 
 
