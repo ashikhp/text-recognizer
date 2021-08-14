@@ -54,7 +54,7 @@ const home = (props) => {
                             />
                             <Text style={{ marginLeft: 5, marginTop: 5, color: "black", fontSize: 16 }}>Camera</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ marginTop: 43, marginLeft: 45 }}>
+                        <TouchableOpacity style={{ marginTop: 40, marginLeft: 45 }}>
                             <Image
                                 style={{ height: 63, width: 63 }}
                                 resizeMode={'contain'}
