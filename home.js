@@ -9,9 +9,9 @@ const home = (props) => {
     return (
         <>
             <StatusBar
-                backgroundColor="#226e36"
+                backgroundColor="#4a8eed"
             />
-            <Appbar.Header style={{ backgroundColor: '#226e36', height: 50, marginTop: 0 }}>
+            <Appbar.Header style={{ backgroundColor: '#4a8eed', height: 50, marginTop: 0 }}>
                 <Appbar.Content
                     title={'Image to Text - Text Recognizer'}
                     color='#fff'
@@ -22,11 +22,13 @@ const home = (props) => {
             <TouchableOpacity style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
                 onPress={() => { setmodal(true) }}
             >
-                <MaterialCommunityIcons name="plus"
-                    size={60}
-                    color="#226e36" />
-                <Text>
-                    Click here to take image
+                <View style={{ backgroundColor: "#fff", borderRadius: 50, borderWidth: 0.444, padding: 10 }}>
+                    <MaterialCommunityIcons name="plus"
+                        size={60}
+                        color="#4a8eed" />
+                </View>
+                <Text style={{ marginTop: 5 }}>
+                    Tap anywhere to take image
                 </Text>
             </TouchableOpacity>
             <Modal isVisible={modal}
@@ -35,8 +37,8 @@ const home = (props) => {
             >
                 <View style={{ backgroundColor: "#fff", height: 200, borderRadius: 10 }}>
 
-                    <View style={{ backgroundColor: "#226e36", marginTop: -10, height: 30, width: "100%", borderTopEndRadius: 10, borderTopLeftRadius: 10 }}>
-                        <Text style={{ fontSize: 14, color: "#fff", padding: 3 }}>Choose Image via</Text>
+                    <View style={{ backgroundColor: "#4a8eed", marginTop: -10, height: 30, width: "100%", borderTopEndRadius: 10, borderTopLeftRadius: 10 }}>
+                        <Text style={{ fontSize: 14, color: "#fff", padding: 3, marginLeft: 4 }}>Choose Image via</Text>
                     </View>
                     <MaterialCommunityIcons name="close"
                         style={{ alignSelf: "flex-end", marginTop: -30 }}
@@ -50,7 +52,7 @@ const home = (props) => {
                                 resizeMode={'contain'}
                                 source={require('./assets/camera.png')}
                             />
-                            <Text style={{ marginLeft: 5, marginTop: 5, color: "#226e36" }}>Camera</Text>
+                            <Text style={{ marginLeft: 5, marginTop: 5, color: "black", fontSize: 16 }}>Camera</Text>
                         </View>
                         <View style={{ marginTop: 43, marginLeft: 45 }}>
                             <Image
@@ -58,7 +60,7 @@ const home = (props) => {
                                 resizeMode={'contain'}
                                 source={require('./assets/image-gallery.png')}
                             />
-                            <Text style={{ marginLeft: 5, marginTop: 5, color: "#226e36" }}>Gallery</Text>
+                            <Text style={{ marginLeft: 5, marginTop: 5, color: "black", fontSize: 16 }}>Gallery</Text>
                         </View>
                     </View>
 
