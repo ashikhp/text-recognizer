@@ -7,7 +7,7 @@ import Modal from 'react-native-modal';
 const home = (props) => {
     const [modal, setmodal] = useState(false)
     return (
-        <>
+        <View style={{ backgroundColor: "#fff", flex: 1 }}>
             <StatusBar
                 backgroundColor="#4a8eed"
             />
@@ -22,11 +22,11 @@ const home = (props) => {
             <TouchableOpacity style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
                 onPress={() => { setmodal(true) }}
             >
-                <View style={{ backgroundColor: "#fff", borderRadius: 50, borderWidth: 0.444, padding: 10 }}>
-                    <MaterialCommunityIcons name="plus"
-                        size={60}
-                        color="#4a8eed" />
-                </View>
+                <Image
+                    style={{ height: 65, width: 65 }}
+                    resizeMode={'contain'}
+                    source={require('./assets/plus.png')}
+                />
                 <Text style={{ marginTop: 5 }}>
                     Tap anywhere to take image
                 </Text>
@@ -81,7 +81,7 @@ const home = (props) => {
 
                 </View>
             </Modal>
-        </>
+        </View>
     );
 }
 
