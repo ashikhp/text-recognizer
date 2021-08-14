@@ -23,7 +23,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.prodevelopers.imageToText",
+      "versionCode": 1,
+      "enableDangerousExperimentalLeanBuilds": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
